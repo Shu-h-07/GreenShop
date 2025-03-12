@@ -29,5 +29,5 @@ public class Shoppingcard {
     @Column(nullable = false)
     private Integer coupon_discount;
     @Column(nullable = false)
-    private String shipping;
+    private double shipping;
 }

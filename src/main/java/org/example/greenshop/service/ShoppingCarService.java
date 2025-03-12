@@ -38,7 +38,7 @@ public class ShoppingCarService {
         shoppingcard.setCoupon(shoppingcardDto.getCoupon());
         shoppingcard.setPrice(shoppingcardDto.getPrice());
         shoppingcard.setQuantity(shoppingcardDto.getQuantity());
-        shoppingcard.setShipping(shoppingcardDto.getShipping());
+        shoppingcard.setShipping(Double.parseDouble(shoppingcardDto.getShipping()));
         shoppingcard.setCoupon_discount(shoppingcardDto.getCoupon_discount());
         shoppingcard.setSubtotal(shoppingcardDto.getSubtotal());
         shoppingcard.setTotal(shoppingcardDto.getTotal());
