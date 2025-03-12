@@ -29,26 +29,28 @@ public class CategoryService {
         Category category = new Category();
         category.setName(categoryDto.getName());
         category.setDescription(categoryDto.getDescription());
-        category.setCategory_count(categoryDto.getCategory_count());
+        category.setCategory_count((categoryDto.getCategory_count()));
         category.setCreated_date(categoryDto.getCreated_date());
         categoryRepo.save(category);
         return new Result(true, "Yes");
     }
-    public Result update(Integer id , CategoryDto categoryDto){
+
+    public Result update(Integer id, CategoryDto categoryDto) {
         Optional<Category> byId = categoryRepo.findById(id);
-        if(byId.isPresent()){
+        if (byId.isPresent()) {
             Category category = byId.get();
-        category.setName(categoryDto.getName());
-        category.setDescription(categoryDto.getDescription());
-        category.setCategory_count(categoryDto.getCategory_count());
-        category.setCreated_date(categoryDto.getCreated_date());
+            category.setName(categoryDto.getName());
+            category.setDescription(categoryDto.getDescription());
+            category.setCategory_count(categoryDto.getCategory_count());
+            category.setCreated_date(categoryDto.getCreated_date());
             categoryRepo.save(category);
-            return new Result(true , "Nice");
+            return new Result(true, "Nice");
         }
         return new Result(false, "Bad");
     }
-    public Result delete(Integer id){
+
+    public Result delete(Integer id) {
         categoryRepo.deleteById(id);
-        return new Result(true , "Yes");
+        return new Result(true, "Yes");
     }
 }

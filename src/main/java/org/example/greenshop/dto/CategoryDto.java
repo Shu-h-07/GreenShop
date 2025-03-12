@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class CategoryDto {
     private String name;
-    private String category_count;
+    private Integer category_count;
     private LocalDateTime created_date;
     private String description;
 }
